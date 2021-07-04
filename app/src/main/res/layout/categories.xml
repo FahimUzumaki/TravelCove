@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="260dp"
+    android:layout_height="185dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="12sp"
+    app:cardCornerRadius="12dp"
+    android:padding="10dp"
+    android:id="@+id/category"
+    app:cardBackgroundColor="#00000000"
+    app:cardElevation="19dp">
+
+    <RelativeLayout
+        android:id="@+id/background_gradient"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="#1140A3"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/categories_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="12sp"
+            android:fontFamily="@font/imprishma"
+            android:text="River and Sea beaches"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textColorHighlight="#1140A3"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/categories_image"
+            android:layout_width="230dp"
+            android:layout_height="88dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/river_sea" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

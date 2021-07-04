@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="287dp"
+    android:layout_height="179dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="13dp"
+    android:padding="18dp"
+    android:id="@+id/card_view"
+    android:layout_margin="12sp"
+    app:cardBackgroundColor="#00000000">
+
+    <RelativeLayout
+        android:layout_width="267dp"
+        android:layout_height="170dp"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/saint"
+            android:layout_width="117dp"
+            android:layout_height="170dp"
+            android:src="@drawable/saint_martin"
+            android:scaleType="centerCrop">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/saint_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/saint"
+            android:text="Saint Martin"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/segoepr"
+            android:textColor="#C1FF79"
+            android:layout_marginLeft="10sp"
+            />
+
+        <TextView
+            android:id="@+id/saint_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cholo ghure asi..joss jaiga eita..."
+            android:layout_below="@+id/saint_text"
+            android:layout_toRightOf="@+id/saint"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+
+            android:textSize="15sp"></TextView>
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

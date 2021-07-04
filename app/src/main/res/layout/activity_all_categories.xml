@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="12dp"
+    tools:context=".User.AllCategories"
+    android:background="@drawable/badami">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+
+        <ImageView
+            android:id="@+id/sea"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:elevation="12dp"
+            android:src="@drawable/river_logo"
+            android:scaleType="fitXY"
+            android:onClick="river"
+            />
+
+
+
+
+        <ImageView
+            android:layout_below="@+id/sea"
+            android:id="@+id/hills"
+            android:layout_width="390dp"
+            android:layout_height="200dp"
+            android:src="@drawable/hill_logo"
+            android:scaleType="fitXY"
+            android:onClick="hill"
+            android:elevation="12dp"
+            />
+        <ImageView
+            android:id="@+id/forests"
+            android:layout_below="@+id/hills"
+            android:layout_width="390dp"
+            android:layout_height="200dp"
+            android:src="@drawable/heritage_logo"
+            android:scaleType="fitXY"
+            android:onClick="heritage"
+            android:elevation="12dp"
+            />
+
+        <ImageView
+            android:id="@+id/heritages"
+            android:layout_below="@+id/forests"
+            android:layout_width="390dp"
+            android:layout_height="210dp"
+            android:elevation="12dp"
+            android:padding="5dp"
+            android:onClick="forest"
+            android:src="@drawable/forest_logo"
+            android:scaleType="fitXY"
+            />
+
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

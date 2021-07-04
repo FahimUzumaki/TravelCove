@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "861870091480",
+    "project_id": "travelcove-199b1",
+    "storage_bucket": "travelcove-199b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861870091480:android:ebe1dca3cd349039343bad",
+        "android_client_info": {
+          "package_name": "com.example.travelcove"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861870091480-lrfvoggste75i4s83ttcb1vq4duojb0t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgvX5Jq-ml6YnD5ALn7b5FtM_ACjSZpLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "861870091480-lrfvoggste75i4s83ttcb1vq4duojb0t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

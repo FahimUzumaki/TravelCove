@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.travelcove">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TravelCove">
+        <activity android:name=".CategoryFinalView.YouFavouriteFinal"
+            android:label="Your Favourite"
+            android:parentActivityName=".User.Welcome_page"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"></activity>
+        <activity
+            android:name=".User.Profile"
+            android:label="Profile"
+            android:parentActivityName=".User.Welcome_page"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".CategoryFinalView.ForestFinal"
+            android:label="Forests"
+            android:parentActivityName=".HelperClasses.HomeAdapter.ForestRecycler"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".CategoryFinalView.HeritageFinal"
+            android:label="@string/historical"
+            android:parentActivityName=".HelperClasses.HomeAdapter.HeritageRecycler"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".CategoryFinalView.HillFinal"
+            android:label="@string/hill"
+            android:parentActivityName=".HelperClasses.HomeAdapter.HillRecycler"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".CategoryFinalView.RiverFinal"
+            android:label="@string/sea"
+            android:parentActivityName=".HelperClasses.HomeAdapter.RiverRecycler"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".Common.Credits"
+            android:label="Credits"
+            android:parentActivityName=".User.Welcome_page"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".HelperClasses.HomeAdapter.ForestRecycler"
+            android:label="@string/forest"
+            android:parentActivityName=".User.AllCategories"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".HelperClasses.HomeAdapter.HeritageRecycler"
+            android:label="@string/historical"
+            android:parentActivityName=".User.AllCategories"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".HelperClasses.HomeAdapter.HillRecycler"
+            android:label="@string/hill"
+            android:parentActivityName=".User.AllCategories"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".HelperClasses.HomeAdapter.RiverRecycler"
+            android:label="@string/sea"
+            android:parentActivityName=".User.AllCategories"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".User.AllCategories"
+            android:label="@string/category"
+            android:parentActivityName=".User.Welcome_page"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".HelperClasses.HomeAdapter.TouristView"
+            android:label="@string/tourist_favourites"
+            android:parentActivityName=".User.Welcome_page"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".Common.ItemView"
+            android:label="Travel Cove"
+            android:parentActivityName=".User.Welcome_page"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity
+            android:name=".Common.SearchActivity"
+            android:label="@string/search_text"
+            android:parentActivityName=".User.Welcome_page"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+        <activity android:name=".User.Register" />
+        <activity android:name=".User.Welcome_page" />
+        <activity android:name=".Common.OnBoarding" />
+        <activity android:name=".User.Login" />
+        <activity android:name=".Common.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

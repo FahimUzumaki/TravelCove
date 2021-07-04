@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/your_favourite_recycler"
+    android:layout_width="190dp"
+    android:layout_height="220dp"
+    app:cardBackgroundColor="#00000000"
+    android:layout_margin="10sp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="15dp">
+
+    <RelativeLayout
+        android:layout_width="170dp"
+        android:layout_height="220dp"
+        android:background="#656464">
+
+        <ImageView
+            android:id="@+id/saint2"
+            android:layout_width="170dp"
+            android:layout_height="175dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/saint_martin">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/saint_text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/saint2"
+            android:layout_marginLeft="10sp"
+
+            android:fontFamily="@font/segoepr"
+            android:text="Saint Martin"
+            android:textColor="#C1FF79"
+            android:textColorHighlight="#656464"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/saint_desc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/saint_text2"
+            android:padding="10dp"
+            android:text="Cholo ghure asi..joss jaiga eita..."
+            android:textColor="@color/white"
+
+            android:textSize="15sp"></TextView>
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

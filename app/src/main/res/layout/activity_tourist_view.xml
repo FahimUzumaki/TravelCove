@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relative"
+    android:background="@drawable/badami"
+    tools:context=".HelperClasses.HomeAdapter.TouristView">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+    <ImageView
+        android:id="@+id/imageViewItem2"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/saint_martin"
+       />
+
+            <ToggleButton
+
+                android:id="@+id/favouriteButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:textOn=""
+                android:textOff=""
+                android:layout_marginTop="185dp"
+                android:layout_marginStart="300dp"
+                android:background="@drawable/check">
+
+            </ToggleButton>
+
+    <TextView
+        android:id="@+id/textViewName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginStart="50dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Travel Cove"
+        android:layout_centerHorizontal="true"
+
+        android:textColor="@color/black"
+        android:textSize="35dp"
+         />
+
+    <TextView
+        android:id="@+id/descr"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/textViewName2"
+        android:textStyle="bold"
+        android:text="Description :"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/textViewDesc2"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_below="@+id/descr"
+                android:textStyle="italic"
+                android:textColor="@color/black"
+                android:textSize="18dp"/>
+
+
+     </RelativeLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>
