@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
@@ -33,6 +34,8 @@ import com.example.travelcove.HelperClasses.HomeAdapter.TouristHelperClass;
 import com.example.travelcove.HelperClasses.HomeAdapter.YourFavouriteAdapter;
 import com.example.travelcove.HelperClasses.HomeAdapter.YourFavouriteHelperClass;
 import com.example.travelcove.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -104,14 +107,20 @@ public class Welcome_page extends AppCompatActivity implements NavigationView.On
         navigationDrawer();
 
         tourist_favourite();
-        your_favourite();
+        //your_favourite();
         categoriesRecycler();
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         your_favourite();
+
+        if(fAuth.getCurrentUser() == null){
+            startActivity(new Intent(getApplicationContext() , Login.class));
+            finish();
+        }
     }
 
     private void navigationDrawer() {
@@ -220,6 +229,31 @@ public class Welcome_page extends AppCompatActivity implements NavigationView.On
         tourist_favourite.setAdapter(adapter);
     }
 
+    /*private void your_favourite(){
+
+        your_favourite.setHasFixedSize(true);
+        your_favourite.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        ArrayList<YourFavouriteHelperClass>yourFavouriteLocation = new ArrayList<>();
+
+        DocumentReference documentReference = fStore.collection("favourites").document(userID);
+        documentReference.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Welcome_page.this, "Error Loading Data", Toast.LENGTH_SHORT).show();
+                        Log.i("TAG" , "Error !" + e.toString());
+                    }
+                });
+    }*/
+
 
     public void your_favourite() {
         your_favourite.setHasFixedSize(true);
@@ -244,7 +278,7 @@ public class Welcome_page extends AppCompatActivity implements NavigationView.On
 
                         String key = entry.getKey();
                         String value = (String) entry.getValue();
-                        //Log.i("TravelCove" , "Key = " + key + "  value = " + value);
+                                //Log.i("TravelCove" , "Key = " + key + "  value = " + value);
 
                         if(key.equals("Bichanakandi") && value.equals("true")){ yourFavouriteLocation.add(new YourFavouriteHelperClass(R.drawable.bichanakandi, "Bichanakandi", "...."));}
                         if(key.equals("Sajek Valley") && value.equals("true")){ yourFavouriteLocation.add(new YourFavouriteHelperClass(R.drawable.sajek_valley, "Sajek Valley", "...."));}
@@ -285,6 +319,7 @@ public class Welcome_page extends AppCompatActivity implements NavigationView.On
                     adapter = new YourFavouriteAdapter(Welcome_page.this, yourFavouriteLocation);
                     your_favourite.setAdapter(adapter);
                 }
+
             }
         });
 

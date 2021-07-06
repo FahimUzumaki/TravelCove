@@ -1,15 +1,20 @@
 package com.example.travelcove.User;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.travelcove.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -46,12 +51,15 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getApplicationContext() , Login.class));
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
                 finish();
             }
-        });
 
-        DocumentReference documentReference = fStore.collection("users").document(userID);
+        });
+                //intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);;
+
+        /*DocumentReference documentReference = fStore.collection("users").document(userID);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -59,8 +67,34 @@ public class Profile extends AppCompatActivity {
                 nameView.setText(value.getString("Name"));
                 emailView.setText(value.getString("Email"));
             }
-        });
+        });*/
+
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        showProfile();
+    }
 
+    private void showProfile(){
+
+        DocumentReference documentReference = fStore.collection("users").document(userID);
+        documentReference.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        nameView.setText(documentSnapshot.getString("Name"));
+                        emailView.setText(documentSnapshot.getString("Email"));
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Profile.this, "Error Occured", Toast.LENGTH_SHORT).show();
+                        Log.i("TAG" , "Error ! " + e.toString());
+                    }
+                });
+
+    }
 }

@@ -54,12 +54,13 @@ public class OnBoarding extends AppCompatActivity {
 
 
     public void skip(View view) {
-        startActivity(new Intent(this, Login.class));
+        startActivity(new Intent(this, Welcome_page.class));
         finish();
     }
 
     public void start(View view) {
-        startActivity(new Intent(this, Login.class));
+        startActivity(new Intent(this, Welcome_page.class));
+        finish();
     }
 
 

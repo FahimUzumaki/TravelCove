@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.travelcove.R;
+import com.example.travelcove.User.Login;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -41,7 +42,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this, OnBoarding.class);
+                Intent intent = new Intent(SplashScreen.this, Login.class);
                 startActivity(intent);
                 finish();
             }

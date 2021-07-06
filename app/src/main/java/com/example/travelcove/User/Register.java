@@ -19,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.travelcove.Common.OnBoarding;
 import com.example.travelcove.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -112,16 +113,17 @@ public class Register extends AppCompatActivity {
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
-                                    Log.i("Travel" , "user profile created for " + userID);
+                                    Log.i("TAG" , "user profile created for " + userID);
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull  Exception e) {
-                                    Log.i("Travel" , "failure on " + e.toString());
+                                    Log.i("TAG" , "failure on " + e.toString());
                                 }
                             });
 
-                            startActivity(new Intent(getApplicationContext() , Welcome_page.class));
+                            startActivity(new Intent(getApplicationContext() , OnBoarding.class));
+                            finish();
                         }
 
 
@@ -152,6 +154,7 @@ public class Register extends AppCompatActivity {
 
     public void loginButtonHandle(View view){
         startActivity(new Intent(getApplicationContext() , Login.class));
+        finish();
     }
 
 }

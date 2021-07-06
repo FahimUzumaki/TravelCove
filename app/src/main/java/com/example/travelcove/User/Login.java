@@ -50,10 +50,10 @@ public class Login extends AppCompatActivity {
         signUpButton = findViewById(R.id.signUpField);
         fAuth = FirebaseAuth.getInstance();
 
-        /*if(fAuth.getCurrentUser() != null){
+        if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext() , Welcome_page.class));
             finish();
-        }*/
+        }
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +83,7 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.INVISIBLE);
                             startActivity(new Intent(getApplicationContext() , Welcome_page.class));
+                            finish();
                         }
 
                         else{
@@ -93,7 +94,6 @@ public class Login extends AppCompatActivity {
                 });
             }
         });
-
 
         showPasswordBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -111,9 +111,17 @@ public class Login extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        //finishAndRemoveTask();
+        finishAffinity();
+        finish();
+    }
 
     public void signUpButtonHandle(View view){
         startActivity(new Intent(getApplicationContext() , Register.class));
+        finish();
     }
 
     public void signUp(View view){
