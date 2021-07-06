@@ -167,11 +167,13 @@
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="76dp"
         android:layout_height="28dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="691dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.958" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
