@@ -31,7 +31,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            >
 
 
             <ImageView
@@ -72,16 +73,17 @@
             android:layout_height="30dp"
             android:layout_marginStart="28dp"
             android:layout_marginEnd="28dp"
-            android:background="#E4E3E1"
+            android:background="@color/black"
             android:elevation="8dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="82dp"
+                android:layout_marginStart="22dp"
                 android:layout_marginLeft="15dp"
                 android:onClick="searchIcon"
+                android:textColor="@color/white"
                 android:text="@string/search_text"
                 android:textSize="17sp" />
 
@@ -90,9 +92,9 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="287dp"
+                android:layout_marginRight="10dp"
                 android:onClick="searchIcon"
+                app:tint="@color/white"
                 android:src="@drawable/search_icon" />
 
 
