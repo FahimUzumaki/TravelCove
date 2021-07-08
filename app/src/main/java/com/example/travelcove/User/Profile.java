@@ -92,7 +92,7 @@ public class Profile extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(Profile.this, "Error Occured", Toast.LENGTH_SHORT).show();
-                        Log.i("TAG" , "Error ! " + e.toString());
+                        //Log.i("TAG" , "Error ! " + e.toString());
                     }
                 });
 

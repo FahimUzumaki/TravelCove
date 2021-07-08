@@ -60,7 +60,6 @@ public class Welcome_page extends AppCompatActivity implements NavigationView.On
 
     static final float END_SCALE = 0.7f;
 
-
     RecyclerView tourist_favourite, categoriesRecycler;
     RecyclerView your_favourite;
     RecyclerView.Adapter adapter;
@@ -95,13 +94,27 @@ public class Welcome_page extends AppCompatActivity implements NavigationView.On
 
 
         DocumentReference documentReference = fStore.collection("users").document(userID);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+        documentReference.get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        nameView.setText(documentSnapshot.getString("Name"));
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Welcome_page.this, "Error Loading Name", Toast.LENGTH_SHORT).show();
+                        //Log.i("TAG" , "Error! " + e.toString());
+                    }
+                });
+        /*documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
 
                 nameView.setText(value.getString("Name"));
             }
-        });
+        });*/
 
 
         navigationDrawer();

@@ -71,7 +71,7 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
                 String name = nameInput.getText().toString().trim();
                 String email = emailInput.getText().toString().trim();
-                String password = passwordInput.getText().toString().trim();
+                String password = passwordInput.getText().toString();
 
                 if(TextUtils.isEmpty(name)){
                     nameInput.setError("Name required");
@@ -113,12 +113,12 @@ public class Register extends AppCompatActivity {
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
-                                    Log.i("TAG" , "user profile created for " + userID);
+                                    //Log.i("TAG" , "user profile created for " + userID);
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull  Exception e) {
-                                    Log.i("TAG" , "failure on " + e.toString());
+                                    //Log.i("TAG" , "failure on " + e.toString());
                                 }
                             });
 
